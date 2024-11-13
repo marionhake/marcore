@@ -7,26 +7,7 @@
         "energy": "fire",
         "hp": "30",
         "damage": "20"
-      },
-
-    "54": {
-      "Name": "Fire Wizard",
-      "Rarity": "Rare",
-      "Rarityv2": "120",
-      "Stage": "basic",
-      "energy": "fire",
-      "hp": "100",
-      "damage": "200"
-    },
-
-    "96": {
-      "Name": "Earth Guardian",
-      "Rarity": "Epic",
-      "Rarityv2": "150",
-      "Stage": "basic",
-      "energy": "earth",
-      "hp": "20",
-      "damage": "300"
-    }
+      }
+      
   }
   
