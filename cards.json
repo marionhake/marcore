@@ -7,6 +7,28 @@
         "energy": "fire",
         "hp": "30",
         "damage": "20"
+      },
+
+      "2": {
+        "Name": "Miki",
+        "Rarity": "basic",
+        "Rarityv2": "30",
+        "Stage": "basic",
+        "energy": "fire",
+        "hp": "40",
+        "damage": "20",
+        "evole": "Mik"
+      },
+
+      "3": {
+        "Name": "Miker",
+        "Rarity": "basic",
+        "Rarityv2": "70",
+        "Stage": "basic",
+        "energy": "fire",
+        "hp": "100",
+        "damage": "50",
+        "evole": "Miki"
       }
       
   }
