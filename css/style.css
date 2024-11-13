@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 800px;
+}
+  
+  .card {
+    width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: white;
+  }
+  
+  .card .name {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .card .rarity {
+    font-size: 0.9em;
+    padding: 5px;
+    border-radius: 4px;
+    color: white;
+  }
+  
+  .card .hp,
+  .card .type,
+  .card .energy {
+    margin-top: 5px;
+  }
+  
+  .rarity-basic {
+    background-color: gray;
+  }
+  
+  .rarity-rare {
+    background-color: blue;
+  }
+  
+  .rarity-epic {
+    background-color: purple;
+  }
+  
+  .rarity-legendary {
+    background-color: orange;
+  }
+  
