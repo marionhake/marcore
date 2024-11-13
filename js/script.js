@@ -11,6 +11,11 @@ function createCards(data) {
   Object.values(data).forEach(card => {
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('card');
+    
+    cardDiv.onclick = () => {
+      localStorage.setItem('selectedCard', JSON.stringify(card));
+      window.location.href = 'mik.html';
+    };
 
     const name = document.createElement('div');
     name.className = 'name';
@@ -49,24 +54,27 @@ function createCards(data) {
       cardDiv.appendChild(evolve);
     }
 
-    const likeButton = document.createElement('button');
-    likeButton.className = 'like-button';
-    likeButton.textContent = 'Like';
-    likeButton.onclick = () => {
-      showMikDetails();
-    };
-    cardDiv.appendChild(likeButton);
-
     container.appendChild(cardDiv);
   });
 }
 
-function showMikDetails() {
-  document.getElementById('card-container').style.display = 'none';
-  document.getElementById('mik-details').style.display = 'block';
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const cardData = JSON.parse(localStorage.getItem('selectedCard'));
+  
+  if (cardData) {
+    document.getElementById('card-name').textContent = cardData.Name;
+    document.getElementById('card-rarity').textContent = `Rarity: ${cardData.Rarity}`;
+    document.getElementById('card-hp').textContent = `HP: ${cardData.hp}`;
+    document.getElementById('card-damage').textContent = `Damage: ${cardData.damage}`;
+    document.getElementById('card-type').textContent = `Type: ${cardData.Stage}`;
+    document.getElementById('card-energy').textContent = `Energy: ${cardData.energy}`;
+    
+    if (cardData.evole) {
+      document.getElementById('card-evolve').textContent = `Evolves into: ${cardData.evole}`;
+    }
+  }
+});
 
 function backToCards() {
-  document.getElementById('card-container').style.display = 'flex';
-  document.getElementById('mik-details').style.display = 'none';
+  window.location.href = 'home';
 }
