@@ -3,20 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cards</title>
+  <title>Mik</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div id="card-container"></div>
-
-  <div id="mik-details" style="display: none;">
-    <h1>Thanks for Liking Mik!</h1>
-    <p>You’ve shown your support for Mik! You are awesome!</p>
-    <button class="back-button" onclick="backToCards()">Back to Cards</button>
+  <div id="card-details">
+    <h1>Mik</h1>
+    <div id="card-rarity">Rarity: basic</div>
+    <div id="card-hp">HP: 30</div>
+    <div id="card-damage">Damage: 20</div>
+    <div id="card-energy">Energy: fire</div>
+    <button onclick="backToCards()">Back to Cards</button>
   </div>
 
-  <script src="script.js"></script>
-
+  <script>
+    function backToCards() {
+      window.location.href = 'home.html'; // Navigate back to the main page
+    }
+  </script>
 </body>
 </html>

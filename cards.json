@@ -6,7 +6,8 @@
         "Stage": "basic",
         "energy": "fire",
         "hp": "30",
-        "damage": "20"
+        "damage": "20",
+        "page": "Mik"
       },
 
       "2": {
@@ -17,7 +18,8 @@
         "energy": "fire",
         "hp": "40",
         "damage": "20",
-        "evole": "Mik"
+        "evole": "Mik",
+        "page": "Miki"
       },
 
       "3": {
@@ -28,8 +30,9 @@
         "energy": "fire",
         "hp": "100",
         "damage": "50",
-        "evole": "Miki"
+        "evole": "Miki",
+        "page": "Miker"
       }
-      
+
   }
   
