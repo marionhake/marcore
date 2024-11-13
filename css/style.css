@@ -1,60 +1,89 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 800px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f3f3f3;
 }
-  
-  .card {
-    width: 200px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    background-color: white;
-  }
-  
-  .card .name {
-    font-size: 1.2em;
-    font-weight: bold;
-  }
-  
-  .card .rarity {
-    font-size: 0.9em;
-    padding: 5px;
-    border-radius: 4px;
-    color: white;
-  }
-  
-  .card .hp,
-  .card .type,
-  .card .energy {
-    margin-top: 5px;
-  }
-  
-  .rarity-basic {
-    background-color: gray;
-  }
-  
-  .rarity-rare {
-    background-color: blue;
-  }
-  
-  .rarity-epic {
-    background-color: purple;
-  }
-  
-  .rarity-legendary {
-    background-color: orange;
-  }
-  
+
+#card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  width: 250px;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  text-align: center;
+}
+
+.card .name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.card .rarity {
+  font-size: 1em;
+  color: gray;
+}
+
+.card .hp, .card .damage, .card .energy, .card .type, .card .evolve {
+  margin-top: 8px;
+  font-size: 0.9em;
+}
+
+.card .like-button {
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 1em;
+  color: white;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card .like-button:hover {
+  background-color: #0056b3;
+}
+
+.card .evolve {
+  color: green;
+  font-weight: bold;
+}
+
+#mik-details {
+  text-align: center;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 2em;
+  color: #333;
+}
+
+p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.back-button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}

@@ -5,68 +5,68 @@ fetch('cards.json')
   })
   .catch(error => console.error('Error loading card data:', error));
 
-
 function createCards(data) {
   const container = document.getElementById('card-container');
-
-
-  const isGreece = navigator.language === 'el' || navigator.language === 'el-GR';
 
   Object.values(data).forEach(card => {
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('card');
 
-
     const name = document.createElement('div');
     name.className = 'name';
-    name.textContent = isGreece ? translateToGreek(card.Name) : card.Name;
+    name.textContent = card.Name;
     cardDiv.appendChild(name);
 
     const rarity = document.createElement('div');
     rarity.className = `rarity rarity-${card.Rarity.toLowerCase()}`;
-    rarity.textContent = isGreece ? translateToGreek(card.Rarity) : card.Rarity;
+    rarity.textContent = card.Rarity;
     cardDiv.appendChild(rarity);
 
     const hp = document.createElement('div');
     hp.className = 'hp';
-    hp.textContent = `${isGreece ? 'Ζωή' : 'HP'}: ${card.hp}`;
+    hp.textContent = `HP: ${card.hp}`;
     cardDiv.appendChild(hp);
 
     const damage = document.createElement('div');
     damage.className = 'damage';
-    damage.textContent = `${isGreece ? 'Ζημιά' : 'Damage'}: ${card.damage}`;
+    damage.textContent = `Damage: ${card.damage}`;
     cardDiv.appendChild(damage);
 
     const type = document.createElement('div');
     type.className = 'type';
-    type.textContent = `${isGreece ? 'Τύπος' : 'Type'}: ${isGreece ? translateToGreek(card.Stage) : card.Stage}`;
+    type.textContent = `Type: ${card.Stage}`;
     cardDiv.appendChild(type);
 
     const energy = document.createElement('div');
     energy.className = 'energy';
-    energy.textContent = `${isGreece ? 'Ενέργεια' : 'Energy'}: ${isGreece ? translateToGreek(card.energy) : card.energy}`;
+    energy.textContent = `Energy: ${card.energy}`;
     cardDiv.appendChild(energy);
+
+    if (card.evole) {
+      const evolve = document.createElement('div');
+      evolve.className = 'evolve';
+      evolve.textContent = `Evolves into: ${card.evole}`;
+      cardDiv.appendChild(evolve);
+    }
+
+    const likeButton = document.createElement('button');
+    likeButton.className = 'like-button';
+    likeButton.textContent = 'Like';
+    likeButton.onclick = () => {
+      showMikDetails();
+    };
+    cardDiv.appendChild(likeButton);
 
     container.appendChild(cardDiv);
   });
 }
 
+function showMikDetails() {
+  document.getElementById('card-container').style.display = 'none';
+  document.getElementById('mik-details').style.display = 'block';
+}
 
-function translateToGreek(word) {
-  const translations = {
-    "Name Of Card": "Όνομα Κάρτας",
-    "Rare": "Σπάνιο",
-    "Legendary": "Θρυλικό",
-    "Basic": "Βασικό",
-    "Epic": "Επικό",
-    "HP": "Ζωή",
-    "Damage": "Ζημιά",
-    "Type": "Τύπος",
-    "Energy": "Ενέργεια",
-    "fire": "φωτιά",
-    "earth": "γη",
-    "psyxic": "ψυχικό",
-    "blue fire": "μπλε φωτιά"
-  };
-  return translations[word] || word;
+function backToCards() {
+  document.getElementById('card-container').style.display = 'flex';
+  document.getElementById('mik-details').style.display = 'none';
 }
